@@ -1,0 +1,27 @@
+salarys	116727 - 155606	2
+salarys	155606 - 194485	1
+		
+days	avg	11.333333333333334
+days	max	25.0
+days	min	3.0
+ 		
+experience	between3And6	2
+experience	moreThan6	1
+  		
+employment	full	3
+   		
+schedule	fullDay	2
+schedule	flexible	1
+    		
+skills	PHP	2
+skills	MySQL	2
+skills	PHP5	1
+skills	HTML5	1
+skills	JavaScript	1
+skills	Git	2
+skills	ООП	2
+skills	MVC	1
+skills	PHP7	1
+skills	Symfony	1
+skills	SQL	1
+     		

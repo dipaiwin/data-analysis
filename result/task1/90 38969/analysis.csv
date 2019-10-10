@@ -1,0 +1,160 @@
+vacancies_name	системныйадминистратор	5
+vacancies_name	модератор	2
+vacancies_name	помощниксистемногоадминистратора	2
+vacancies_name	менеджеринтернет-магазина	2
+vacancies_name	редакторотсмотраконтента	1
+vacancies_name	специалисттехническойподдержки1:с	1
+vacancies_name	операторcall-центра(график22по6часов)	1
+vacancies_name	операторпунктавыдачизаказов	1
+vacancies_name	juniorsqlразработчик	1
+vacancies_name	it-cпециалистслужбытехническойподдержки	1
+vacancies_name	специалисттехническойподдержкиинженергсктв(b2bсегмент)	1
+vacancies_name	системныйадминистраторкурьер	1
+vacancies_name	специалистколл-центра	1
+vacancies_name	специалисттех.поддержкисистемыэлектронногодокументооборота(сэд)	1
+vacancies_name	специалисттехническойподдержки	1
+vacancies_name	техникподключения	1
+vacancies_name	html-верстальщикwp-разработчик(удаленно)	1
+vacancies_name	менеджеринформационно-аналитическогоотдела	1
+vacancies_name	менеджер-операторинтернет-магазина	1
+vacancies_name	ведущийсистемныйадминистратор	1
+vacancies_name	помощникseo-специалиста	1
+vacancies_name	html-верстальщик	1
+vacancies_name	оператордомашнегоколл-центраcall-центраконтактногоцентра	1
+vacancies_name	специалистпоинформационнымтехнологиям	1
+vacancies_name	it-специалист	1
+vacancies_name	системныйадминистратор(стажер)	1
+vacancies_name	ведущийспециалисттехническойподдержки	1
+vacancies_name	монтажникслаботочныхсистем	1
+vacancies_name	менеджервбюропереводов	1
+vacancies_name	видеооператорвидеомонтажер	1
+vacancies_name	геймер	1
+vacancies_name	специалистподдержкиинформационныхсистем	1
+vacancies_name	smmспециалист	1
+vacancies_name	инженер-программист	1
+		
+days	avg	9.097560975609756
+days	max	29.0
+days	min	0.0
+ 		
+experience	noExperience	20
+experience	between1And3	18
+experience	between3And6	3
+  		
+employment	full	34
+employment	part	5
+employment	project	2
+   		
+schedule	fullDay	26
+schedule	shift	6
+schedule	remote	5
+schedule	flexible	4
+    		
+skills	PHP	1
+skills	jQuery	2
+skills	JavaScript	1
+skills	Git	2
+skills	CSS3	2
+skills	CSS	2
+skills	PHP5	1
+skills	HTML5	2
+skills	HTML	3
+skills	Jetbrains Phpstorm	1
+skills	Веб-программирование	1
+skills	CMS Wordpress	1
+skills	FTP	1
+skills	phpMyAdmin	1
+skills	СУБД	1
+skills	HTTP	1
+skills	Cистемы управления базами данных	2
+skills	SQL	1
+skills	Ajax	2
+skills	Adobe Photoshop	2
+skills	SMM	1
+skills	Продвижение бренда	1
+skills	Планирование рекламных кампаний	1
+skills	Реклама	1
+skills	Администрирование сетевого оборудования	4
+skills	Настройка сетевых подключений	6
+skills	Внутренний контроль	1
+skills	Настройка ПК	4
+skills	Настройка почтовых серверов	1
+skills	Техническое обслуживание	3
+skills	Выездное обслуживание	1
+skills	Системы видеонаблюдения	1
+skills	Ремонт ПК	3
+skills	Проектирование ЛВС	1
+skills	Мини-АТС	1
+skills	DHCP	1
+skills	Настройка DNS	1
+skills	Сборка ПК	3
+skills	Настройка ПО	5
+skills	Офисная техника	2
+skills	TCP/IP	2
+skills	XML	1
+skills	Прием и распределение звонков	1
+skills	Консультирование клиентов по телефону	3
+skills	входящие звонки	2
+skills	Ответственность	2
+skills	Работа с юридическими лицами	1
+skills	работа с физическими лицами	2
+skills	Консультирование клиентов	3
+skills	Linux	2
+skills	Windows 7	2
+skills	Администрирование серверов Linux	1
+skills	Администрирование серверов	1
+skills	Видеосъемка	1
+skills	Видеомонтаж	1
+skills	Adobe Premier Pro	1
+skills	Обработка видео	1
+skills	Adobe Premier	1
+skills	Сетевое оборудование	1
+skills	Nginx	1
+skills	Настройка VPS/VDS серверов	1
+skills	Настройка серверов	1
+skills	Ubuntu Server	1
+skills	SEO	1
+skills	Грамотность	2
+skills	Копирайтинг	1
+skills	1С: Бухгалтерия	1
+skills	1С: Предприятие 8	1
+skills	Техническая поддержка	2
+skills	Клиентоориентированность	1
+skills	Точность и внимательность к деталям	1
+skills	Пользователь ПК	5
+skills	Коммуникабельность	2
+skills	Стрессоустойчивость	3
+skills	Умение работать в режиме многозадачности	1
+skills	Пунктуальность	1
+skills	Уверенный пользователь ПК	1
+skills	игровая индустрия	1
+skills	игры	1
+skills	Customer Service	1
+skills	service provider	1
+skills	Boost	1
+skills	booster	1
+skills	игрок	1
+skills	геймер	1
+skills	gamer	1
+skills	game	1
+skills	player	1
+skills	компьютерные игры	1
+skills	киберспорт	1
+skills	гейминг	1
+skills	world of warcraft	1
+skills	wow	1
+skills	wow: classic	1
+skills	wow: bfa	1
+skills	mmorpg	1
+skills	Уверенное владение компьютером	1
+skills	Поиск информации в интернет	1
+skills	оформление заказов	2
+skills	исходящие звонки	1
+skills	Ведение клиентской базы	1
+skills	Ведение отчетности	1
+skills	Грамотная речь	3
+skills	Wifi networks	1
+skills	внимательность	1
+skills	Телефонные переговоры	1
+skills	Работа с большим объемом информации	1
+     		

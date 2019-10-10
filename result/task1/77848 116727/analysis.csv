@@ -1,0 +1,344 @@
+vacancies_name	программист1с	5
+vacancies_name	интернет-маркетолог	4
+vacancies_name	seo-специалист	3
+vacancies_name	qaengineer	2
+vacancies_name	продавец-консультантвсалонсвязи	2
+vacancies_name	backend-программист	2
+vacancies_name	разработчикc#	2
+vacancies_name	трафик-менеджер(нативнаяреклама)	2
+vacancies_name	инженер-проектировщик1категории(технолог-аналитик)	1
+vacancies_name	sales&accountmanagerспециалистпоработеспартнерами(интернет-реклама)	1
+vacancies_name	разработчикбизнес-решений	1
+vacancies_name	web-программистнаbitrix	1
+vacancies_name	системныйаналитик	1
+vacancies_name	программистpython	1
+vacancies_name	руководительинтернет-проектов	1
+vacancies_name	smm-менеджервязыковомцентре	1
+vacancies_name	техническийписательбизнес-аналитик(it)	1
+vacancies_name	мастерпоремонтукомпьютеров	1
+vacancies_name	менеджерпопродажамуслуг	1
+vacancies_name	системныйадминистраторlinux	1
+vacancies_name	инженер-инсталлятор(подключениеюридическихлиц)	1
+vacancies_name	программистс++	1
+vacancies_name	программиствстраиваемыхсистемlinuxc++node.js	1
+vacancies_name	web-программист(php)	1
+vacancies_name	web-программистfrontenddeveloper	1
+vacancies_name	мастерпоремонтуцифровойтехники	1
+vacancies_name	программист-разработчик	1
+vacancies_name	педагогическийдизайнерпродюсеронлайн-курсов	1
+vacancies_name	менеджерпопродажам(it,b2b)	1
+vacancies_name	менеджеринтернет-проектовменеджер-стажер	1
+vacancies_name	начальникотделакорпоративныхинформационныхсистем	1
+vacancies_name	инженер-программистc#	1
+vacancies_name	frontenddeveloper(vue,nuxt)	1
+vacancies_name	консультантвмагазинтехники(м.проспектпросвещения,м.политехническая,м.гражданскийпроспект)	1
+vacancies_name	консультантsapewm	1
+vacancies_name	программистбитрикс	1
+vacancies_name	ведущийинженерповнедрениюисопровождениюпроектоввобластителекоммуникаций	1
+vacancies_name	web-дизайнер	1
+vacancies_name	веб-разработчик(phpcsshtmlmysql)	1
+vacancies_name	главныйпрограммист	1
+vacancies_name	специалистофисапродаж	1
+vacancies_name	продакт-менеджер(it)	1
+vacancies_name	тестировщикqaспециалист(платформапомонетизациимобильныхприложений)	1
+vacancies_name	программистjs	1
+vacancies_name	web-программистbackenddeveloper	1
+vacancies_name	php-программистweb-разработчик(1с-битрикс)	1
+vacancies_name	программистweb-разработчик(backendfrontend)	1
+vacancies_name	frontend-разработчик	1
+vacancies_name	"монтажникслаботочныхсистем,м.""гражданскийпр"".""московкая"""	1
+vacancies_name	программист1c	1
+vacancies_name	менеджерпоработесклиентамиaccountmanager	1
+vacancies_name	программистphp(middle)	1
+vacancies_name	системныйадминистратор	1
+vacancies_name	дизайнеркомпьютернойграфики	1
+vacancies_name	менеджерпопродажамуслугdigital-маркетинга	1
+vacancies_name	qaинженер	1
+vacancies_name	devopsинженер	1
+vacancies_name	программист1сунф	1
+vacancies_name	web-разработчик	1
+vacancies_name	менеджерпопродажамb2b	1
+vacancies_name	начинающийспециалист(itмаркетингпривлечениепартнеров)	1
+vacancies_name	iosdeveloper	1
+vacancies_name	аналитикбизнес-процессованалитик1с	1
+vacancies_name	веб-программистbackend-разработчик	1
+vacancies_name	техническийписатель	1
+vacancies_name	web-программист(back-end)	1
+vacancies_name	pythonпрограммист(middle)	1
+vacancies_name	ведущиймаркетолог	1
+vacancies_name	консультантsap	1
+vacancies_name	начальникпроизводства	1
+vacancies_name	менеджерпроектоввотделинтернет-маркетингааккаунт-менеджер(руководительпроектов)	1
+vacancies_name	программистdelphi	1
+vacancies_name	ученикмастерапоремонтуофиснойтехники(мфу,принтеры)	1
+vacancies_name	инженер-программистc#wpf	1
+vacancies_name	ведущийпрограммист1спрограммист1с	1
+vacancies_name	менеджерофисапродаж	1
+vacancies_name	инженерпоремонтуноутбуков	1
+vacancies_name	веб-разработчикfrontenddeveloper(middle)	1
+vacancies_name	программистс#	1
+vacancies_name	младшийконсультантsap	1
+vacancies_name	разработчикfrontend,qt	1
+vacancies_name	специалистпродажиобслуживаниявсалонсвязибилайн	1
+		
+days	avg	7.395833333333333
+days	max	29.0
+days	min	0.0
+ 		
+experience	between1And3	62
+experience	noExperience	20
+experience	between3And6	14
+  		
+employment	full	95
+employment	part	1
+   		
+schedule	fullDay	73
+schedule	flexible	14
+schedule	remote	8
+schedule	shift	1
+    		
+skills	SAP ERP	2
+skills	SAP FI	1
+skills	Веб разработка	2
+skills	Backend development	2
+skills	PHP	13
+skills	1С-Битрикс	7
+skills	JavaScript	15
+skills	Git	13
+skills	PostgreSQL	9
+skills	ООП	8
+skills	MySQL	14
+skills	Веб-программирование	3
+skills	Bitrix	2
+skills	SQL	11
+skills	Ajax	6
+skills	компонентный ремонт техники	1
+skills	ремонт телефонов, планшетов, ноутбуков	1
+skills	модульный ремонт техники	1
+skills	ремонт цифровой техники	1
+skills	ремонт электронники	1
+skills	HTML	13
+skills	CSS	13
+skills	jQuery	6
+skills	CSS3	5
+skills	HTML5	6
+skills	PHP5	5
+skills	Bootstrap	2
+skills	Контекстная реклама	2
+skills	Копирайтинг	1
+skills	Лидогенерация	1
+skills	Составление семантического ядра	3
+skills	Управление бюджетом	2
+skills	Email маркетинг	1
+skills	SEO оптимизация	3
+skills	SMM	3
+skills	SMS маркетинг	1
+skills	WEB аналитика	3
+skills	Аудит SMM	1
+skills	Аудит поисковой видимости сайта	2
+skills	Ведение групп в социальных сетях	3
+skills	Внешняя оптимизация сайта	2
+skills	Внутренний аудит контекстной рекламы	1
+skills	внешний аудит сайта	2
+skills	Внешний аудит контекстной рекламы	1
+skills	Ведение мобильных рекламных кампаний	1
+skills	Информационные рассылки	1
+skills	Интернет-реклама	4
+skills	SEO	5
+skills	Внутренняя оптимизация сайта	1
+skills	Google AdWords	2
+skills	Google Analytics	5
+skills	Яндекс.Директ	2
+skills	Яндекс.Метрика	4
+skills	Internet Marketing	3
+skills	Веб-аналитика	3
+skills	CMS Wordpress	2
+skills	Веб-дизайн	2
+skills	Управление интернет-проектами	2
+skills	Прототипирование	1
+skills	Разработка технических заданий	4
+skills	Постановка задач разработчикам	1
+skills	руководство командой разработчиков	1
+skills	Управление проектами	5
+skills	Английский язык	1
+skills	Social Media Marketing	1
+skills	Партнерские программы в социальных сетях	1
+skills	Продвижение в социальных группах	1
+skills	Проведение опросов	1
+skills	Анализ трафика	2
+skills	MS Excel	2
+skills	заведение рекламных кампаний	2
+skills	составление аналитических отчётов по рекламным кампаниям клиентов	2
+skills	Проектирование пользовательских интерфейсов	1
+skills	Грамотная речь	3
+skills	Тестирование пользовательского интерфейса	1
+skills	Разработка проектной документации	1
+skills	настройки web-проектов	1
+skills	ручное тестирование	1
+skills	Тестирование	2
+skills	Регресcионное тестирование	1
+skills	Нагрузочное тестирование	2
+skills	Test case	1
+skills	внутренний аудит сайта	1
+skills	SEO-копирайтинг	1
+skills	Поисковая оптимизация сайтов	1
+skills	Деловая переписка	4
+skills	Работа в команде	6
+skills	Деловая коммуникация	3
+skills	1С программирование	5
+skills	С#	1
+skills	WSS Docs	1
+skills	Ориентация на результат	6
+skills	1С: Предприятие 8	3
+skills	1С: Медицина	1
+skills	C#	5
+skills	.NET Framework	1
+skills	Delphi	1
+skills	Работа с базами данных	1
+skills	MS SQL Server	1
+skills	Проектирование	1
+skills	Vue.js	1
+skills	Nuxt.js	1
+skills	Vue	1
+skills	Грамотность	1
+skills	Высокая скорость печати	1
+skills	писать чистый код	1
+skills	быстро читать чужой код	1
+skills	Windows Server 2003	1
+skills	Hyper-V	1
+skills	Active Directory	1
+skills	Администрирование серверов Windows	1
+skills	VPN	1
+skills	Atlassian Jira	2
+skills	Java	3
+skills	JUnit	1
+skills	Node.js	2
+skills	AngularJS	2
+skills	1С: Склад	1
+skills	Автоматизация склада	1
+skills	Складская логистика	1
+skills	Транспортная логистика	1
+skills	Холодные звонки	1
+skills	Холодные продажи	2
+skills	B2B Продажи	2
+skills	Проведение переговоров	1
+skills	Продажи корпоративным клиентам	1
+skills	Проведение презентаций	2
+skills	Подготовка коммерческих предложений	1
+skills	Администрирование серверов Linux	1
+skills	TCP/IP	1
+skills	Linux	5
+skills	Администрирование сетевого оборудования	1
+skills	Настройка DNS	1
+skills	Cisco	1
+skills	FreeBSD	1
+skills	Nginx	1
+skills	Bash	2
+skills	MS SQL	2
+skills	Администрирование сайтов	1
+skills	LAMP	1
+skills	Apache HTTP Server	1
+skills	KVM	1
+skills	VMware	1
+skills	1С: Бухгалтерия	2
+skills	1С: Комплексная автоматизация	1
+skills	Работоспособность	1
+skills	Желание прогрессировать и добиться успеха	1
+skills	Поиск информации в интернет	1
+skills	Ведение переговоров	3
+skills	Python	5
+skills	Телефонные переговоры	1
+skills	Активные продажи	2
+skills	Коммуникабельность	1
+skills	Интернет маркетинг	2
+skills	Подготовка презентаций	1
+skills	Клиентоориентированность	1
+skills	Корпоративные продажи	1
+skills	CRM	1
+skills	Google Docs	1
+skills	Навыки переговоров	1
+skills	Навыки телефонных продаж	1
+skills	Пользователь ПК	1
+skills	работа с текущей базой клиентов	1
+skills	Управление отношениями с клиентами	1
+skills	UML	1
+skills	BPMN	1
+skills	Моделирование бизнес процессов	1
+skills	Системное мышление	1
+skills	Системный анализ	1
+skills	Деловое общение	1
+skills	Yandex Direct	1
+skills	Adobe Photoshop	2
+skills	E-Commerce	1
+skills	.Net Core	1
+skills	REST	1
+skills	JSON API	1
+skills	XML	2
+skills	k8s	2
+skills	ELK	1
+skills	CI/CD	2
+skills	API	2
+skills	WebSockets	1
+skills	SOA	1
+skills	opencart	1
+skills	Обучение персонала	1
+skills	Управление затратами	1
+skills	Управление производством	1
+skills	Планирование	1
+skills	Организационные навыки	1
+skills	Аутсорсинг	1
+skills	Гибкость	1
+skills	Проектный менеджмент	1
+skills	Проектная документация	1
+skills	Обучение и развитие	1
+skills	Мобильность	1
+skills	JS	1
+skills	Scrum	1
+skills	Agile Project Management	1
+skills	ORACLE	1
+skills	СУБД	1
+skills	NET Core	1
+skills	Jetbrains Phpstorm	1
+skills	Sublime	1
+skills	webpack	1
+skills	Sass	1
+skills	vue.js	1
+skills	vanilla js	1
+skills	WPF	1
+skills	Аналитические исследования	1
+skills	Модульное тестирование	1
+skills	платформа 8.3	1
+skills	continuous delivery	1
+skills	continuous integration	1
+skills	DevOps	1
+skills	Docker	1
+skills	elk	1
+skills	gitlab	1
+skills	devSecOps	1
+skills	Kubernetes	1
+skills	Adobe	1
+skills	Sketch	1
+skills	Invision	1
+skills	ABAP	1
+skills	C++	1
+skills	Yii	1
+skills	Laravel	1
+skills	ReactJS	1
+skills	VueJS	1
+skills	Symfony	1
+skills	монтаж ЛВС	1
+skills	витая пара	1
+skills	UTP-Cat5e	1
+skills	ВОЛС	1
+skills	Руководство коллективом	1
+skills	Управленческие навыки	1
+skills	Raspberry	1
+skills	Pi	1
+skills	Unix	1
+skills	C/C++	1
+skills	WebRTC	1
+skills	RTSP	1
+skills	SIP	1
+skills	1С: Зарплата и управление персоналом	1
+skills	1С: Управление Торговлей	1
+     		

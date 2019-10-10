@@ -1,0 +1,25 @@
+salarys	NAN - NAN	1
+		
+days	avg	10.0
+days	max	10.0
+days	min	10.0
+ 		
+experience	between3And6	1
+  		
+employment	full	1
+   		
+schedule	fullDay	1
+    		
+skills	Java	1
+skills	SCALA	1
+skills	REST API	1
+skills	Docker	1
+skills	Websockets	1
+skills	RabbitMQ	1
+skills	Kafka	1
+skills	Reactive Streams	1
+skills	CQRS	1
+skills	Kubernetes	1
+skills	RocksDB	1
+skills	Cats	1
+     		
