@@ -39,16 +39,6 @@ def handle_salary(record):
     return salary
 
 
-def extract_experience(record):
-    experiences = re.findall('[\d+]', record['experience']['id'])
-    min_experience, max_experience = 0, 0
-    if len(experiences) > 0:
-        min_experience = max_experience = experiences[0]
-        if len(experiences) == 2:
-            max_experience = experiences[1]
-    return min_experience, max_experience
-
-
 def convert_to_my_format(record):
     description = record['description'].lower()
     mapping = {
@@ -61,8 +51,6 @@ def convert_to_my_format(record):
         result[value], description = parse_text(description, key)
     result['description'] = remove_tags_and_whitespaces(description)
     salary = handle_salary(record)
-    extract_experience(record)
-    min_experience, max_experience = extract_experience(record)
     result.update(
         {
             'name': record['name'],  # название
@@ -71,8 +59,7 @@ def convert_to_my_format(record):
             'salary_to': salary.get('to'),  # максимальная зарплата
             'employer': record['employer']['name'],  # название компании
             'published_at': record['published_at'],  # дата размещения вакансии
-            'experience_from': min_experience,  # минимальный требуемый опыт работы
-            'experience_to': max_experience,  # максимальный требуемый опыт работы
+            'experience': record['experience']['id'],  # требуемый опыт работы
             'employment': record['employment']['id'],  # тип занятости
             'schedule': record['schedule']['id'],  # рабочий график
             'key_skills': '|'.join([item['name'] for item in record['key_skills']]),  # ключевые навыки
@@ -103,4 +90,4 @@ def parse_vacancies():
 
 if __name__ == '__main__':
     res = parse_vacancies()
-    pd.DataFrame(res).to_csv('./test.csv')
+    pd.DataFrame(res).to_csv('./vacancies.csv')
