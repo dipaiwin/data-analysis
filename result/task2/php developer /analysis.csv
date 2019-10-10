@@ -1,0 +1,20 @@
+salarys	NAN - NAN	2
+		
+days	avg	2.5
+days	max	3.0
+days	min	2.0
+ 		
+experience	between3And6	2
+  		
+employment	full	2
+   		
+schedule	fullDay	1
+schedule	flexible	1
+    		
+skills	PHP 7+	1
+skills	Symfony	1
+skills	Yii	1
+skills	Laravel	1
+skills	PostgreSQL	1
+skills	Git	1
+     		

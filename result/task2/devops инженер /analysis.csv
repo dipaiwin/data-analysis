@@ -1,0 +1,26 @@
+salarys	77848 - 116727	1
+salarys	NAN - NAN	2
+		
+days	avg	10.666666666666666
+days	max	21.0
+days	min	5.0
+ 		
+experience	between1And3	3
+  		
+employment	full	3
+   		
+schedule	fullDay	3
+    		
+skills	continuous delivery	1
+skills	continuous integration	1
+skills	DevOps	1
+skills	Git	1
+skills	Docker	1
+skills	elk	1
+skills	k8s	1
+skills	gitlab	1
+skills	Bash	1
+skills	devSecOps	1
+skills	Kubernetes	1
+skills	CI/CD	1
+     		

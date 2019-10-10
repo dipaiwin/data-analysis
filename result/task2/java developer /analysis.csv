@@ -1,0 +1,25 @@
+salarys	NAN - NAN	3
+		
+days	avg	13.0
+days	max	17.0
+days	min	6.0
+ 		
+experience	between1And3	2
+experience	between3And6	1
+  		
+employment	full	3
+   		
+schedule	fullDay	3
+    		
+skills	Java	2
+skills	PostgreSQL	1
+skills	Spring Framework	2
+skills	Spring Data	1
+skills	JPA	1
+skills	Oracle Pl/SQL	1
+skills	SQL	1
+skills	Java Servlets	1
+skills	Java SE	2
+skills	Kotlin	1
+skills	Kafka	1
+     		

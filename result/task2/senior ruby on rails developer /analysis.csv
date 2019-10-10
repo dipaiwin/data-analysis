@@ -1,0 +1,23 @@
+salarys	NAN - NAN	1
+		
+days	avg	10.0
+days	max	10.0
+days	min	10.0
+ 		
+experience	between3And6	1
+  		
+employment	full	1
+   		
+schedule	remote	1
+    		
+skills	Vue.js	1
+skills	Rspec	1
+skills	Capybara	1
+skills	ClickHouse	1
+skills	Ruby On Rails	1
+skills	MySQL	1
+skills	Redis	1
+skills	Ruby	1
+skills	Sidekiq	1
+skills	Elixir	1
+     		

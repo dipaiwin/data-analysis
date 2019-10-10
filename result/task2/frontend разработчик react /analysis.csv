@@ -1,0 +1,25 @@
+salarys	NAN - NAN	2
+		
+days	avg	6.0
+days	max	10.0
+days	min	2.0
+ 		
+experience	between1And3	2
+  		
+employment	full	2
+   		
+schedule	fullDay	1
+schedule	remote	1
+    		
+skills	HTML5	1
+skills	CSS3	1
+skills	JS (ES5)	1
+skills	Angular	1
+skills	TypeScript	1
+skills	RxJs	1
+skills	NGRX	1
+skills	JavaScript	1
+skills	Typescript	1
+skills	React	1
+skills	Redux	1
+     		

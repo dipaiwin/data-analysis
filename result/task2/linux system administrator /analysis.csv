@@ -1,0 +1,19 @@
+salarys	NAN - NAN	2
+		
+days	avg	1.0
+days	max	2.0
+days	min	0.0
+ 		
+experience	between1And3	2
+  		
+employment	full	2
+   		
+schedule	fullDay	1
+schedule	flexible	1
+    		
+skills	Nginx	1
+skills	Python	1
+skills	Linux	1
+skills	Networking	1
+skills	Bash	1
+     		

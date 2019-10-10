@@ -1,0 +1,26 @@
+salarys	NAN - NAN	3
+		
+days	avg	3.0
+days	max	6.0
+days	min	1.0
+ 		
+experience	moreThan6	1
+experience	between3And6	1
+experience	between1And3	1
+  		
+employment	full	3
+   		
+schedule	fullDay	1
+schedule	remote	1
+schedule	flexible	1
+    		
+skills	Разработка нового продукта	1
+skills	Аналитическое мышление	1
+skills	Маркетинговые исследования	1
+skills	Internet Marketing	1
+skills	Анализ рынка	1
+skills	Agile Project Management	1
+skills	Product Management	1
+skills	Presentation skills	1
+skills	Project management	1
+     		

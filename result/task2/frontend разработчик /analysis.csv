@@ -1,0 +1,44 @@
+salarys	38969 - 77848	1
+salarys	77848 - 116727	1
+salarys	NAN - NAN	6
+		
+days	avg	4.875
+days	max	22.0
+days	min	0.0
+ 		
+experience	between1And3	6
+experience	between3And6	2
+  		
+employment	full	8
+   		
+schedule	fullDay	8
+    		
+skills	Веб-программирование	1
+skills	HTML5	1
+skills	jQuery	3
+skills	CSS3	2
+skills	Ajax	1
+skills	Git	6
+skills	JavaScript	7
+skills	Кроссбраузерная верстка	1
+skills	Валидная верстка	1
+skills	Sass	1
+skills	JSON API	1
+skills	VUE	1
+skills	CSS	3
+skills	HTML	2
+skills	Vue	1
+skills	Ext JS	1
+skills	ANT	1
+skills	React	3
+skills	npm	1
+skills	Linux	1
+skills	rhino	1
+skills	sencha	1
+skills	Node.js	2
+skills	TypeScript	1
+skills	SailsJS	1
+skills	Redux	1
+skills	Bootstrap	1
+skills	MVC	1
+     		

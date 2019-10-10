@@ -1,0 +1,45 @@
+salarys	90 - 38969	1
+salarys	38969 - 77848	2
+salarys	NAN - NAN	6
+		
+days	avg	6.333333333333333
+days	max	22.0
+days	min	0.0
+ 		
+experience	between1And3	7
+experience	noExperience	2
+  		
+employment	full	8
+employment	part	1
+   		
+schedule	fullDay	5
+schedule	flexible	2
+schedule	remote	1
+schedule	shift	1
+    		
+skills	Грамотная речь	2
+skills	Пользователь ПК	1
+skills	Консультирование клиентов	1
+skills	CRM	1
+skills	Техническая поддержка	3
+skills	Уверенный пользователь ПК	1
+skills	Bug Tracking Systems	1
+skills	Atlassian Jira	1
+skills	MS Office	1
+skills	Linux	2
+skills	Сетевые технологии	1
+skills	Администрирование серверов Linux	1
+skills	Консультирование клиентов по телефону	1
+skills	Работа с претензиями	1
+skills	Информационные технологии	1
+skills	Администрирование сетевого оборудования	1
+skills	Helpdesk	1
+skills	ServiceDesk	1
+skills	Настройка сетевых подключений	1
+skills	TCP/IP	1
+skills	Customer Support	1
+skills	Деловая переписка	1
+skills	Деловое общение	1
+skills	Прием и распределение телефонных звонков	1
+skills	Телефонные переговоры	1
+     		

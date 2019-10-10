@@ -1,0 +1,55 @@
+salarys	38969 - 77848	4
+salarys	77848 - 116727	5
+salarys	116727 - 155606	2
+salarys	NAN - NAN	19
+		
+days	avg	9.933333333333334
+days	max	29.0
+days	min	0.0
+ 		
+experience	between1And3	16
+experience	between3And6	11
+experience	noExperience	2
+experience	moreThan6	1
+  		
+employment	full	27
+employment	part	2
+employment	project	1
+   		
+schedule	fullDay	23
+schedule	remote	6
+schedule	flexible	1
+    		
+skills	1С программирование	14
+skills	1C: Бухгалтерия	3
+skills	1С: Предприятие 8	11
+skills	1С: Документооборот	7
+skills	1С: Управление Торговлей	8
+skills	1С: Торговля	2
+skills	C++	2
+skills	1С: Управление Производственным Предприятием	2
+skills	Web-сервис	1
+skills	Клиент-Сервер	1
+skills	MS SQL	2
+skills	1С: Бухгалтерия	5
+skills	1С: Медицина	1
+skills	1С: Комплексная автоматизация	2
+skills	Работа в команде	1
+skills	Ориентация на результат	1
+skills	JavaScript	1
+skills	MySQL	1
+skills	Python	1
+skills	платформа 8.3	1
+skills	SQL	2
+skills	БСП	1
+skills	1С: Зарплата и управление персоналом	4
+skills	Электронный документооборот	1
+skills	1С: Предприятие	1
+skills	Обновление конфигурации 1С	4
+skills	ERP-системы на базе 1С	1
+skills	1С: Розница	1
+skills	Git	1
+skills	ООП	1
+skills	C#	1
+skills	Пользователь ПК	1
+     		
