@@ -1,10 +1,12 @@
-from collections import defaultdict
-
 import math
+from collections import defaultdict, Counter
+from datetime import datetime
+
 import pandas as pd
 
-from text_preprocess import TextProcessManager
-from group_combiner import GroupCombiner
+from processing_for_clustering.group_combiner import GroupCombiner
+from processing_for_clustering.salary_handler import SalaryHandler
+from processing_for_clustering.text_preprocess import TextProcessManager
 
 
 def simple_process(origin_names):
@@ -23,61 +25,65 @@ def create_list_dfs(data_frame):
     data_frame.name = data_frame.name.apply(lambda x: x.lower().strip())
     names = set(data_frame.name)
     groups_name = simple_process(names)
-    df_list = []
+    df_list = dict()
     for key, value in groups_name.items():
-        df_list.append(data_frame[data_frame.name.isin(value)].drop(['Unnamed: 0'], axis=1))
+        df_list[key] = (data_frame[data_frame.name.isin(value)].drop(['Unnamed: 0'], axis=1))
     return df_list
 
 
-def get_average_salary_interval(group):
-    cities = set(group.city)
-    salary_city = dict()
-    for city in cities:
-        city_group = group[group.city == city]
-        salary_city[city] = {
-            'from': city_group.salary_from.mean(),
-            'to': city_group.salary_to.mean()
-        }
-    return salary_city
+def count_days(groups):
+    for _, group in groups.items():
+        date_group = pd.to_datetime(group.published_at).apply(lambda x: x.strftime("%Y-%m-%d %H:%M:%S"))
+        group['count_days'] = [date.days for date in datetime.now() - pd.to_datetime(date_group)]
 
 
-def get_valid_salary(group, global_salary):
-    salary_city = get_average_salary_interval(group)
-    for city, salary in salary_city.items():
-        avg_salary_city = global_salary[city]
-        is_nan_from = math.isnan(salary['from'])
-        is_nan_to = math.isnan(salary['to'])
-        if is_nan_to or is_nan_from:
-            if is_nan_from and is_nan_to:
-                salary = {'from': avg_salary_city['from'], 'to': avg_salary_city['to']}
+def fill_gap_description(data_frame):
+    values = dict([(key, 'empty') for key in ('responsibility', 'conditions', 'requirement', 'description')])
+    return data_frame.fillna(values)
+
+
+def calculate_skills(key_skills):
+    cnt_skills = Counter()
+    for line_skills in key_skills:
+        if not isinstance(line_skills, str) and math.isnan(line_skills):
+            continue
+        tokenize_skills = line_skills.split('|')
+        tokenize_skills = [item.strip().lower() for item in tokenize_skills]
+        cnt_skills.update(tokenize_skills)
+    return cnt_skills
+
+
+def fill_key_skills(groups):
+    result = dict()
+    for key_name in groups:
+        group = groups[key_name]
+        count_skills = calculate_skills(group.key_skills.values)
+        values_skills = count_skills.values()
+        top_skills = []
+        if len(values_skills) == 0:
+            top_skills.append('empty')
+        else:
+            max_cs = max(values_skills)
+            min_cs = min(values_skills)
+            if min_cs == max_cs:
+                top_skills = list(count_skills.keys())[:5]
             else:
-                from_salary = salary['from']
-                to_salary = salary['to']
-                salary['from'] = to_salary if is_nan_from else from_salary
-                salary['to'] = from_salary if is_nan_to else to_salary
-        if salary['from'] > salary['to']:
-            salary['to'] = salary['from']
-        salary_city[city] = salary
-    return salary_city
-
-
-def set_proceed_salary_value(group, city, salary_field, value):
-    group.loc[
-        (group.city == city) & (group[salary_field] != group[salary_field]),
-        salary_field
-    ] = value
-
-
-def fill_salary_gaps(groups, global_salary):
-    for group in groups:
-        salary_city = get_valid_salary(group, global_salary)
-        for city, salary in salary_city.items():
-            for sf in salary:
-                set_proceed_salary_value(group, city, f'salary_{sf}', salary[sf])
+                delta = max_cs - min_cs
+                for key, value in count_skills.items():
+                    norm_value = (value - min_cs) / delta
+                    if norm_value >= 0.4:
+                        top_skills.append(key)
+        result[key_name] = group.fillna({'key_skills': '|'.join(top_skills)})
+    return result
 
 
 if __name__ == '__main__':
     df = pd.read_csv("./data/vacancies.csv")
-    global_avg_salary = get_average_salary_interval(df)
+    df = fill_gap_description(df)
+    global_avg_salary = SalaryHandler.get_average_salary_interval(df)
     job_groups = create_list_dfs(df)
-    fill_salary_gaps(job_groups, global_avg_salary)
+    SalaryHandler.fill_salary_gaps(job_groups, global_avg_salary)
+    count_days(job_groups)
+    result_groups = fill_key_skills(job_groups)
+    for key, value in result_groups.items():
+        value.to_csv(f'./result/groups/{key}.csv')
