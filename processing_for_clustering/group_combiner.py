@@ -6,7 +6,7 @@ class GroupCombiner:
         self.main_groups = [
             'c++', 'c#', 'php', 'seo', '1c', 'java', 'react', 'qa', 'sql', 'python', 'android', 'data',
             'ios', 'ux', 'ruby', 'learning', 'backend', 'fullstack', 'frontend', 'веб', 'delphi', '.net', 'owner',
-            'devops', 'дизайнер', 'lead', 'middle', 'abap', 'монтажник', 'smm', 'маркетолог', 'администратор',
+            'devops', 'дизайнер', 'lead', 'middle', 'abap', 'монтажник', 'smm', 'маркетолог', 'администратор', 'scrum',
             'сопровождение', 'аналитик', 'javascript', 'оператор', 'b2b', 'поддержки', 'продаж', 'консультант',
             'безопасности', 'педагог', 'автоматизации', 'директор', 'начальник', 'тестировщик', 'ремонту', 'автор',
             'асу', 'связи', 'персонала', 'помощник', 'главный', 'программист', 'менеджер', 'специалист', 'инженер',
@@ -24,7 +24,7 @@ class GroupCombiner:
         result = defaultdict(list)
         for key, value in groups.items():
             if len(value) == 1:
-                result[frozenset(['etc'])] += value
+                result['etc'] += value
             else:
                 result[key] = value
         return result

@@ -1,4 +1,6 @@
 import math
+import os
+import shutil
 from collections import defaultdict, Counter
 from datetime import datetime
 
@@ -78,7 +80,11 @@ def fill_key_skills(groups):
 
 
 if __name__ == '__main__':
-    df = pd.read_csv("./data/vacancies.csv")
+    save_path = './result/groups_big'
+    if os.path.exists(save_path):
+        shutil.rmtree(save_path)
+    os.makedirs(save_path)
+    df = pd.read_csv("./data/big_vacancies.csv")
     df = fill_gap_description(df)
     global_avg_salary = SalaryHandler.get_average_salary_interval(df)
     job_groups = create_list_dfs(df)
@@ -86,4 +92,5 @@ if __name__ == '__main__':
     count_days(job_groups)
     result_groups = fill_key_skills(job_groups)
     for key, value in result_groups.items():
-        value.to_csv(f'./result/groups/{key}.csv')
+        name_file = f"{' '.join(key) if isinstance(key, frozenset) else key}.csv"
+        value.to_csv(os.path.join(save_path, name_file))

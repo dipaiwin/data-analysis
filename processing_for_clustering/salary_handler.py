@@ -48,3 +48,6 @@ class SalaryHandler:
             for city, salary in salary_city.items():
                 for sf in salary:
                     cls.set_proceed_salary_value(group, city, f'salary_{sf}', salary[sf])
+            group['salary_from'] = group.apply(
+                lambda row: row['salary_to'] if row['salary_to'] < row['salary_from'] else row['salary_from'],
+                axis=1)

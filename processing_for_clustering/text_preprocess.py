@@ -40,7 +40,8 @@ class TextProcessManager:
             ('database|бд|баз данных|postgresql', 'sql'),
             ('sap', 'abap'),
             ('ui', 'ux'),
-            ('director', 'директор')
+            ('director', 'директор'),
+            ('scrum master', 'scrum')
         ]
 
     def extract_text(self, text):
