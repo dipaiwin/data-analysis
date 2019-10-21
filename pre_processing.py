@@ -79,6 +79,17 @@ def fill_key_skills(groups):
     return result
 
 
+def add_group_name(groups):
+    for name, group in groups.items():
+        group['group_name'] = name
+
+
+def convert_groups_to_main_df(groups):
+    add_group_name(groups)
+
+    pd.concat([group for _, group in groups.items()]).to_csv('./data/fill_data.csv')
+
+
 if __name__ == '__main__':
     save_path = './result/groups_big'
     if os.path.exists(save_path):
@@ -91,6 +102,7 @@ if __name__ == '__main__':
     SalaryHandler.fill_salary_gaps(job_groups, global_avg_salary)
     count_days(job_groups)
     result_groups = fill_key_skills(job_groups)
-    for key, value in result_groups.items():
-        name_file = f"{' '.join(key) if isinstance(key, frozenset) else key}.csv"
-        value.to_csv(os.path.join(save_path, name_file))
+    for name, val in result_groups.items():
+        name_file = f"{' '.join(name) if isinstance(name, frozenset) else name}.csv"
+        val.to_csv(os.path.join(save_path, name_file))
+    convert_groups_to_main_df(result_groups)
