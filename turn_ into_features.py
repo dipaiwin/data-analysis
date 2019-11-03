@@ -31,15 +31,15 @@ def conversion_categories_to_one_hot(data_frame, field_name):
 
 
 def get_top_skills(data_frame, n):
-    skills = list(data_frame.key_skills.apply(lambda x: x.split("|")))
+    skills = list(data_frame.list_skills)
     flatten = [item for line in skills for item in line]
     cnt = Counter(flatten)
     return [item[0] for item in cnt.most_common(n)]
 
 
 def dummy_skills(data_frame):
+    data_frame['list_skills'] = data_frame.key_skills.apply(lambda x: [item.lower() for item in x.split("|")])
     top_skills = get_top_skills(data_frame, 10)
-    data_frame['list_skills'] = data_frame.key_skills.apply(lambda x: x.split("|"))
     for skill in top_skills:
         data_frame[skill] = data_frame.list_skills.apply(lambda x: int(skill in x))
     data_frame.drop(['list_skills'], axis=1)
@@ -57,16 +57,16 @@ def split_data_frame(data_frame):
 
 
 if __name__ == '__main__':
-    df = pd.read_csv('./data/fill_data.csv')
+    df = pd.read_csv('./data/fill_data_without_empty_row.csv')
     dummy_skills(df)
     df.count_days = get_norm_data(df.count_days)
     conversion_salary_to_one_hot(df, "salary_to", 7)
     conversion_salary_to_one_hot(df, "salary_from", 6)
     for field in ('city', 'experience', 'employment', 'schedule'):
         conversion_categories_to_one_hot(df, field)
+    df.to_csv('./data/pre_process_data.csv')
+    df = df.drop(['Unnamed: 0'], axis=1).drop(['list_skills'], axis=1)
+    df.to_csv('./data/input_data.csv')
     result_groups = split_data_frame(df)
-    # for key, group in result_groups.items():
-    #     dummy_skills(group)
     for name_gr, val in result_groups.items():
-        res = val.drop(['Unnamed: 0'], axis=1).drop(['list_skills'], axis=1)
-        res.to_csv(f'./result/pre_process/{name_gr}.csv')
+        val.to_csv(f'./result/pre_process_6/{name_gr}.csv')
