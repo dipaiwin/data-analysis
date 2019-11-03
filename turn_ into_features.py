@@ -58,15 +58,15 @@ def split_data_frame(data_frame):
 
 if __name__ == '__main__':
     df = pd.read_csv('./data/fill_data.csv')
-    # dummy_skills(df)
+    dummy_skills(df)
     df.count_days = get_norm_data(df.count_days)
     conversion_salary_to_one_hot(df, "salary_to", 7)
     conversion_salary_to_one_hot(df, "salary_from", 6)
     for field in ('city', 'experience', 'employment', 'schedule'):
         conversion_categories_to_one_hot(df, field)
     result_groups = split_data_frame(df)
-    for key, group in result_groups.items():
-        dummy_skills(group)
+    # for key, group in result_groups.items():
+    #     dummy_skills(group)
     for name_gr, val in result_groups.items():
         res = val.drop(['Unnamed: 0'], axis=1).drop(['list_skills'], axis=1)
         res.to_csv(f'./result/pre_process/{name_gr}.csv')

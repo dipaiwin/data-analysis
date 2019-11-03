@@ -87,15 +87,26 @@ def add_group_name(groups):
 def convert_groups_to_main_df(groups):
     add_group_name(groups)
 
-    pd.concat([group for _, group in groups.items()]).to_csv('./data/fill_data.csv')
+    pd.concat([group for _, group in groups.items()]).to_csv('./data/fill_data_without_empty_row.csv')
+
+
+def drop_emtpy_row(data_frame):
+    number_columns = len(data_frame.columns)
+    drop_list = []
+    for i in data_frame.index:
+        coef_fill_column = 1 - data_frame.iloc[i].isnull().sum() / number_columns
+        if coef_fill_column < 0.7:
+            drop_list.append(i)
+    return data_frame.drop(drop_list)
 
 
 if __name__ == '__main__':
-    save_path = './result/groups_big'
+    save_path = './result/groups_6'
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
     os.makedirs(save_path)
     df = pd.read_csv("./data/big_vacancies.csv")
+    df = drop_emtpy_row(df)
     df = fill_gap_description(df)
     global_avg_salary = SalaryHandler.get_average_salary_interval(df)
     job_groups = create_list_dfs(df)

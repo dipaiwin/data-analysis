@@ -5,7 +5,7 @@ class GroupCombiner:
     def __init__(self):
         self.main_groups = [
             'c++', 'c#', 'php', 'seo', '1c', 'java', 'react', 'qa', 'sql', 'python', 'android', 'data',
-            'ios', 'ux', 'ruby', 'learning', 'backend', 'fullstack', 'frontend', 'веб', 'delphi', '.net', 'owner',
+            'ios', 'ux', 'ruby', 'learning', 'backend', 'fullstack', 'frontend', 'веб', 'delphi', 'owner',
             'devops', 'дизайнер', 'lead', 'middle', 'abap', 'монтажник', 'smm', 'маркетолог', 'администратор', 'scrum',
             'сопровождение', 'аналитик', 'javascript', 'оператор', 'b2b', 'поддержки', 'продаж', 'консультант',
             'безопасности', 'педагог', 'автоматизации', 'директор', 'начальник', 'тестировщик', 'ремонту', 'автор',
