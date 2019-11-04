@@ -13,7 +13,7 @@ def get_norm_data(column):
 
 def conversion_salary_to_one_hot(data_frame, field_name, cnt_group):
     series = data_frame[field_name]
-    _max = int(series.max())+1
+    _max = int(series.max()) + 1
     _min = int(series.min())
     bins = pd.cut(
         series, list(range(_min, _max, (_max - _min) // (cnt_group - 1))),
@@ -67,7 +67,9 @@ if __name__ == '__main__':
         conversion_categories_to_one_hot(df, field)
     df.to_csv('./data/pre_process_data.csv')
     df = df.drop(['Unnamed: 0'], axis=1).drop(['list_skills'], axis=1)
-    df.to_csv('./data/input_data_skills35.csv')
-    result_groups = split_data_frame(df)
-    for name_gr, val in result_groups.items():
-        val.to_csv(f'./groups/extract_feature/{name_gr}.csv')
+    df.loc[df['city'] == 'Челябинск'].to_csv('./data/test.csv')
+    df = df.loc[df['city'] != 'Челябинск']
+    df.to_csv('./data/train.csv')
+    # result_groups = split_data_frame(df)
+    # for name_gr, val in result_groups.items():
+    #     val.to_csv(f'./groups/extract_feature/{name_gr}.csv')

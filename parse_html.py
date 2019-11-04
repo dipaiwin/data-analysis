@@ -72,7 +72,7 @@ def parse_vacancies():
     result = []
     base_url = 'https://api.hh.ru/vacancies/'
     prev_len_result = 0
-    for area_id in (2, 95, 4, 3, 53):
+    for area_id in (104,):
         parameters = {"area": area_id, 'per_page': 100, 'page': 1, 'specialization': 1}
         for i in tqdm(range(1, 10)):
             parameters['page'] = i
@@ -90,4 +90,4 @@ def parse_vacancies():
 
 if __name__ == '__main__':
     res = parse_vacancies()
-    pd.DataFrame(res).to_csv('data/vacancies.csv')
+    pd.DataFrame(res).to_csv('data/special_class.csv')

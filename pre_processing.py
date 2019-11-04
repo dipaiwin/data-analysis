@@ -84,10 +84,8 @@ def add_group_name(groups):
         group['group_name'] = name
 
 
-def convert_groups_to_main_df(groups, border):
-    add_group_name(groups)
-
-    pd.concat([group for _, group in groups.items() if group.shape[0] > border]).to_csv(
+def convert_groups_to_main_df(groups):
+    pd.concat([group for _, group in groups.items()]).to_csv(
         './data/fill_data_without_empty_row.csv')
 
 
@@ -107,6 +105,8 @@ if __name__ == '__main__':
         shutil.rmtree(save_path)
     os.makedirs(save_path)
     df = pd.read_csv("./data/vacancies.csv")
+    special_df = pd.read_csv('./data/special_class.csv')
+    df = pd.concat([df, special_df])
     df = drop_emtpy_row(df)
     df = fill_gap_description(df)
     global_avg_salary = SalaryHandler.get_average_salary_interval(df)
@@ -117,4 +117,6 @@ if __name__ == '__main__':
     # for name, val in result_groups.items():
     #     name_file = f"{' '.join(name) if isinstance(name, frozenset) else name}.csv"
     #     val.to_csv(os.path.join(save_path, name_file))
-    convert_groups_to_main_df(result_groups, 25)
+    add_group_name(result_groups)
+    main_classes = dict((key, group) for key, group in result_groups.items() if group.shape[0] > 25)
+    convert_groups_to_main_df(main_classes)
