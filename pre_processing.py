@@ -84,10 +84,11 @@ def add_group_name(groups):
         group['group_name'] = name
 
 
-def convert_groups_to_main_df(groups):
+def convert_groups_to_main_df(groups, border):
     add_group_name(groups)
 
-    pd.concat([group for _, group in groups.items()]).to_csv('./data/fill_data_without_empty_row.csv')
+    pd.concat([group for _, group in groups.items() if group.shape[0] > border]).to_csv(
+        './data/fill_data_without_empty_row.csv')
 
 
 def drop_emtpy_row(data_frame):
@@ -101,11 +102,11 @@ def drop_emtpy_row(data_frame):
 
 
 if __name__ == '__main__':
-    save_path = './result/groups_6'
+    save_path = './groups/groups_pre_process'
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
     os.makedirs(save_path)
-    df = pd.read_csv("./data/big_vacancies.csv")
+    df = pd.read_csv("./data/vacancies.csv")
     df = drop_emtpy_row(df)
     df = fill_gap_description(df)
     global_avg_salary = SalaryHandler.get_average_salary_interval(df)
@@ -113,7 +114,7 @@ if __name__ == '__main__':
     SalaryHandler.fill_salary_gaps(job_groups, global_avg_salary)
     count_days(job_groups)
     result_groups = fill_key_skills(job_groups)
-    for name, val in result_groups.items():
-        name_file = f"{' '.join(name) if isinstance(name, frozenset) else name}.csv"
-        val.to_csv(os.path.join(save_path, name_file))
-    convert_groups_to_main_df(result_groups)
+    # for name, val in result_groups.items():
+    #     name_file = f"{' '.join(name) if isinstance(name, frozenset) else name}.csv"
+    #     val.to_csv(os.path.join(save_path, name_file))
+    convert_groups_to_main_df(result_groups, 25)
