@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn import metrics
 from sklearn import preprocessing
 from sklearn.utils import shuffle
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
@@ -26,9 +26,7 @@ def add_label(data_frame, need_write=False, le=None):
 def drop_columns(data_frame):
     return data_frame.drop(
         ['responsibility', 'conditions', 'requirement', 'description', 'name', 'city', 'salary_from', 'salary_to',
-         'employer', 'published_at', 'experience', 'employment', 'schedule', 'key_skills', 'group_name',
-         'city: Екатеринбург', 'city: Краснодар', 'city: Новосибирск', 'city: Санкт-Петербург', 'city: Тюмень',
-         'city: Челябинск'
+         'employer', 'published_at', 'experience', 'employment', 'schedule', 'key_skills', 'group_name', 'count_days',
          ], axis=1)
 
 
@@ -38,7 +36,7 @@ def train_models(model, data, le):
     expected = data['yTest']
     predicted = model.predict(data['xTest'])
     res_d = metrics.classification_report(expected, predicted, output_dict=True)
-    pd.DataFrame({'Origin label': le.inverse_transform(expected),'Predict label':le.inverse_transform(predicted)})\
+    pd.DataFrame({'Origin label': le.inverse_transform(expected), 'Predict label': le.inverse_transform(predicted)}) \
         .to_csv('classification_result.csv')
     print(res_d['accuracy'])
 
@@ -47,18 +45,28 @@ if __name__ == '__main__':
     train = shuffle(pd.read_csv('./data/train.csv').drop(['Unnamed: 0'], axis=1))
     class_labels, labenc = add_label(train, True)
     train = drop_columns(train)
-
-    test = shuffle(pd.read_csv('./data/test.csv').drop(['Unnamed: 0'], axis=1))
+    print('Len train: ', train.shape[0])
+    test = shuffle(pd.read_csv('./train_data/test_full.csv').drop(['Unnamed: 0'], axis=1))
     test_labels, _ = add_label(test, False, labenc)
     test = drop_columns(test)
     name_data = ('xTrain', 'xTest', 'yTrain', 'yTest')
     dataset = dict()
-    # train_test_split(df, class_labels, test_size=0.2, random_state=0)
     for key, value in zip(name_data, (train, test, class_labels, test_labels)):
         dataset[key] = value
-    # train_models(KNeighborsClassifier(n_neighbors=7), dataset)
-    # train_models(DecisionTreeClassifier(max_depth=40), dataset)
-    train_models(LogisticRegression(), dataset,labenc)
+    models = {
+        KNeighborsClassifier,
+        DecisionTreeClassifier,
+        LogisticRegression
+    }
+    best_model = None
+    best_avg_percent = 0
+    for model in models:
+        cross = cross_val_score(model(), train, class_labels, cv=3)
+        avg_percent = sum(cross) / len(cross)
+        if avg_percent > best_avg_percent:
+            best_avg_percent = avg_percent
+            best_model = model
+    train_models(best_model(), dataset, labenc)
     # print('Len train data: ', len(yTrain), 'Len test data: ', len(yTest))
     # model = KNeighborsClassifier(n_neighbors=7)
     # model.fit(xTrain, yTrain)

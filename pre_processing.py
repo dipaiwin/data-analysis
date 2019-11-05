@@ -84,9 +84,10 @@ def add_group_name(groups):
         group['group_name'] = name
 
 
-def convert_groups_to_main_df(groups):
-    pd.concat([group for _, group in groups.items()]).to_csv(
-        './data/fill_data_without_empty_row.csv')
+def convert_groups_to_main_df(groups, save_full_path='./data/fill_data_without_empty_row.csv'):
+    full = pd.concat([group for _, group in groups.items()])
+    print(full.shape)
+    pd.concat([group for _, group in groups.items()]).to_csv(save_full_path)
 
 
 def drop_emtpy_row(data_frame):
@@ -99,24 +100,48 @@ def drop_emtpy_row(data_frame):
     return data_frame.drop(drop_list)
 
 
+def drop_bad_classes(groups, border):
+    result = dict()
+    bad_groups = []
+    for key, group in groups.items():
+        if group.shape[0] > border and key != 'программист' and key != 'lead':
+            result[key] = group
+        else:
+            bad_groups.append(key)
+    return result, bad_groups
+
+
+def preprocessor_test(bad_groups):
+    test = pd.read_csv('./data/special_class.csv')
+    test = drop_emtpy_row(test)
+    special_groups = create_list_dfs(test)
+    count_days(special_groups)
+    add_group_name(special_groups)
+    special_groups = dict(
+        (
+            key, group.loc[
+                # group['salary_from'].notnull() & group['salary_to'].notnull() &
+                group['key_skills'].notnull()
+            ]
+        )
+        for key, group in special_groups.items() if key not in bad_groups)
+    convert_groups_to_main_df(special_groups, './train_data/test.csv')
+
+
 if __name__ == '__main__':
     save_path = './groups/groups_pre_process'
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
     os.makedirs(save_path)
     df = pd.read_csv("./data/vacancies.csv")
-    special_df = pd.read_csv('./data/special_class.csv')
-    df = pd.concat([df, special_df])
     df = drop_emtpy_row(df)
-    df = fill_gap_description(df)
-    global_avg_salary = SalaryHandler.get_average_salary_interval(df)
+    # df = fill_gap_description(df)
+    # global_avg_salary = SalaryHandler.get_average_salary_interval(df)
     job_groups = create_list_dfs(df)
-    SalaryHandler.fill_salary_gaps(job_groups, global_avg_salary)
+    # SalaryHandler.fill_salary_gaps(job_groups, global_avg_salary)
     count_days(job_groups)
     result_groups = fill_key_skills(job_groups)
-    # for name, val in result_groups.items():
-    #     name_file = f"{' '.join(name) if isinstance(name, frozenset) else name}.csv"
-    #     val.to_csv(os.path.join(save_path, name_file))
     add_group_name(result_groups)
-    main_classes = dict((key, group) for key, group in result_groups.items() if group.shape[0] > 25)
+    main_classes, small_groups = drop_bad_classes(result_groups, 25)
     convert_groups_to_main_df(main_classes)
+    preprocessor_test(small_groups)

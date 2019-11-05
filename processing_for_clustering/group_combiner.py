@@ -24,7 +24,8 @@ class GroupCombiner:
         result = defaultdict(list)
         for key, value in groups.items():
             if len(value) == 1:
-                result['etc'] += value
+                # result['etc'] += value
+                continue
             else:
                 result[key] = value
         return result

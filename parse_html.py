@@ -72,8 +72,8 @@ def parse_vacancies():
     result = []
     base_url = 'https://api.hh.ru/vacancies/'
     prev_len_result = 0
-    for area_id in (104,):
-        parameters = {"area": area_id, 'per_page': 100, 'page': 1, 'specialization': 1}
+    for area_id in (68, 104, 53):
+        parameters = {"area": area_id, 'per_page': 100, 'page': 1, 'specialization': 1.221}
         for i in tqdm(range(1, 10)):
             parameters['page'] = i
             r = requests.get(base_url, params=parameters)
