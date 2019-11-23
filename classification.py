@@ -1,12 +1,11 @@
 import pandas as pd
 from sklearn import metrics
 from sklearn import preprocessing
-from sklearn.utils import shuffle
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.linear_model import LogisticRegression
+from sklearn.utils import shuffle
 
 
 def add_label(data_frame, need_write=False, le=None):
