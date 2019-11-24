@@ -20,11 +20,6 @@ def extract_all_skills(data_frame):
         for item in row:
             c[item] += 1
     return c
-    # return ['_'.join(item.replace(':', '_').replace('/', '_').split())
-    #         for row in skls
-    #         for item in row
-    #         ]
-    # return ['_'.join(item.split()) for row in skls for item in row]
 
 
 def visualization_correlation_matrix(df):
@@ -74,7 +69,7 @@ def plotly_wordcloud(text):
         y.append(i[1])
     new_freq_list = []
     for i in freq_list:
-        new_freq_list.append(i*mfs+1)
+        new_freq_list.append(i * mfs + 1)
     trace = go.Scatter(x=x, y=y, textfont=dict(size=new_freq_list, color=color_list),
                        hoverinfo='text', hovertext=['{0} {1}'.format(w, f) for w, f in zip(word_list, freq_list)],
                        mode='text', text=word_list)
