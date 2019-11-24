@@ -47,9 +47,11 @@ def field_outliers(df, field):
 
 if __name__ == '__main__':
     data_frame = drop_columns(pd.read_csv('./data/train.csv').drop(['Unnamed: 0'], axis=1))
+    build_box(data_frame)
     bad_obj = count_outliers(data_frame)
     df_field = field_outliers(data_frame, 'salary_to')
     df_field = field_outliers(df_field, 'salary_from')
+    build_box(df_field)
     bad_obj2 = count_outliers(df_field)
     rem_obj = [b1 for b1, b2 in zip(bad_obj, bad_obj2) if b1 == b2]
     data_frame.drop(data_frame.index[[rem_obj]]).to_csv('./data/train_proc.csv')
