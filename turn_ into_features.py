@@ -78,12 +78,12 @@ if __name__ == '__main__':
     df = pd.read_csv('./data/fill_data_without_empty_row.csv')
     n_top_skills = dummy_skills(df)
     df.count_days = get_norm_data(df.count_days)
-    # salary_to_range = conversion_salary_to_one_hot(df, "salary_to", 7)
-    # salary_from_range = conversion_salary_to_one_hot(df, "salary_from", 6)
-    # for field in ('city', 'experience', 'employment', 'schedule'):
-    #     conversion_categories_to_one_hot(df, field)
-    write_to_file(df, './data/train.csv')
-    create_test(n_top_skills)
+    salary_to_range = conversion_salary_to_one_hot(df, "salary_to", 7)
+    salary_from_range = conversion_salary_to_one_hot(df, "salary_from", 6)
+    for field in ('city', 'experience', 'employment', 'schedule'):
+        conversion_categories_to_one_hot(df, field)
+    write_to_file(df, './data/train_clst.csv')
+    # create_test(n_top_skills)
     # create_test(n_top_skills, salary_to_range, salary_from_range)
     # result_groups = split_data_frame(df)
     # for name_gr, val in result_groups.items():
