@@ -32,10 +32,12 @@ def conversion_categories_to_one_hot(data_frame, field_name):
         data_frame[f"{field_name}: {name}"] = cols[name]
 
 
-def get_top_skills(data_frame, n):
+def get_top_skills(data_frame, n, return_dict=False):
     skills = list(data_frame.list_skills)
     flatten = [item for line in skills for item in line]
     cnt = Counter(flatten)
+    if return_dict:
+        return cnt.most_common(n)
     return [item[0] for item in cnt.most_common(n)]
 
 
