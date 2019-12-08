@@ -14,11 +14,11 @@ if __name__ == '__main__':
     df_origin = pd.read_csv('data/clean_clst.csv')
     df = df_origin.drop(drop_columns, axis=1)
     df_origin = df_origin[origin_columns]
-    for model, params, name in zip([KMeans, AffinityPropagation], model_parameters, ['kmeans', 'ap']):
+    for model_creater, params, name in zip([KMeans, AffinityPropagation], model_parameters, ['kmeans', 'ap']):
         top_n_classes = []
-        kmeans = model(**params).fit(df)
-        labels = list(kmeans.labels_)
-        closest, _ = pairwise_distances_argmin_min(kmeans.cluster_centers_, df)
+        model = model_creater(**params).fit(df)
+        labels = list(model.labels_)
+        closest, _ = pairwise_distances_argmin_min(model.cluster_centers_, df)
         df_centers = df_origin.loc[closest, :]
         output_text = []
         for i, (_, row) in enumerate(df_centers.iterrows()):
