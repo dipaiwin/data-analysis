@@ -23,10 +23,15 @@ def add_label(data_frame, need_write=False, le=None):
 
 
 def drop_columns(data_frame):
-    return data_frame.drop(
-        ['responsibility', 'conditions', 'requirement', 'description', 'name', 'city', 'salary_from', 'salary_to',
-         'employer', 'published_at', 'experience', 'employment', 'schedule', 'key_skills', 'group_name', 'count_days',
-         ], axis=1)
+    try:
+        return data_frame.drop(
+            ['responsibility', 'conditions', 'requirement', 'description', 'name', 'city', 'salary_from', 'salary_to',
+             'employer', 'published_at', 'experience', 'employment', 'schedule', 'key_skills', 'group_name',
+             'count_days',
+             'Unnamed: 0'
+             ], axis=1)
+    except:
+        return data_frame.drop(['group_name'], axis=1)
 
 
 def train_models(model, data, le):
@@ -37,54 +42,37 @@ def train_models(model, data, le):
     res_d = metrics.classification_report(expected, predicted, output_dict=True)
     pd.DataFrame({'Origin label': le.inverse_transform(expected), 'Predict label': le.inverse_transform(predicted)}) \
         .to_csv('classification_result.csv')
-    print(res_d['accuracy'])
+    return int(res_d['accuracy'] * 100)
 
 
 if __name__ == '__main__':
-    train = shuffle(pd.read_csv('./data/train.csv').drop(['Unnamed: 0'], axis=1))
-    class_labels, labenc = add_label(train, True)
-    train = drop_columns(train)
-    print('Len train: ', train.shape[0])
-    test = shuffle(pd.read_csv('./train_data/test_full.csv').drop(['Unnamed: 0'], axis=1))
-    test_labels, _ = add_label(test, False, labenc)
-    test = drop_columns(test)
-    name_data = ('xTrain', 'xTest', 'yTrain', 'yTest')
-    dataset = dict()
-    for key, value in zip(name_data, (train, test, class_labels, test_labels)):
-        dataset[key] = value
-    models = {
-        KNeighborsClassifier,
-        DecisionTreeClassifier,
-        LogisticRegression
-    }
-    best_model = None
-    best_avg_percent = 0
-    for model in models:
-        cross = cross_val_score(model(), train, class_labels, cv=3)
-        avg_percent = sum(cross) / len(cross)
-        if avg_percent > best_avg_percent:
-            best_avg_percent = avg_percent
-            best_model = model
-    train_models(best_model(), dataset, labenc)
-    # print('Len train data: ', len(yTrain), 'Len test data: ', len(yTest))
-    # model = KNeighborsClassifier(n_neighbors=7)
-    # model.fit(xTrain, yTrain)
-    # print(model)
-    # expected = yTest
-    # predicted = model.predict(xTest)
-
-    # res_d = metrics.classification_report(expected, predicted, output_dict=True)
-    # cnt_good_classes = 0
-    # for key, value in res_d.items():
-    #     try:
-    #         label = int(key)
-    #         if value['f1-score'] < 0.6:
-    #             print("Label: ", label, labenc.inverse_transform([label])[0], value)
-    #         else:
-    #             cnt_good_classes += 1
-    #     except:
-    #         print(key, value)
-    # print('Good classes: ', cnt_good_classes)
-    # print('All classes: ', len(set(class_labels)))
-    # print(pd.crosstab(labenc.inverse_transform(expected), labenc.inverse_transform(predicted), rownames=['True'],
-    #                   colnames=['Predicted'], margins=True).to_string())
+    result = dict()
+    for train_file, test_file in (
+            ('train.csv', 'test_full.csv'), ('train2.csv', 'test2.csv'), ('train3.csv', 'test3.csv'),('train4.csv', 'test4.csv')):
+        train = shuffle(pd.read_csv(f'./data/{train_file}'))
+        class_labels, labenc = add_label(train, True)
+        train = drop_columns(train)
+        # print('Len train: ', train.shape[0])
+        test = shuffle(pd.read_csv(f'./data/{test_file}'))
+        bb = set(test.columns)
+        test_labels, _ = add_label(test, False, labenc)
+        test = drop_columns(test)
+        name_data = ('xTrain', 'xTest', 'yTrain', 'yTest')
+        dataset = dict()
+        for key, value in zip(name_data, (train, test, class_labels, test_labels)):
+            dataset[key] = value
+        models = {
+            KNeighborsClassifier,
+            DecisionTreeClassifier,
+            LogisticRegression
+        }
+        best_model = None
+        best_avg_percent = 0
+        for model in models:
+            cross = cross_val_score(model(), train, class_labels, cv=3)
+            avg_percent = sum(cross) / len(cross)
+            if avg_percent > best_avg_percent:
+                best_avg_percent = avg_percent
+                best_model = model
+        result[test_file] = train_models(best_model(), dataset, labenc)
+    print(result)

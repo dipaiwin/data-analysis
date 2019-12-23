@@ -73,7 +73,7 @@ def create_test(top_skills, salary_to_list=None, salary_from_list=None):
     # conversion_salary_to_one_hot(test, "salary_to", 7, salary_to_list)
     # conversion_salary_to_one_hot(test, "salary_from", 6, salary_from_list)
     print(test.shape)
-    write_to_file(test, './train_data/test_full.csv')
+    write_to_file(test, 'data/test_full.csv')
 
 
 if __name__ == '__main__':
